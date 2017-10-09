@@ -1,0 +1,14 @@
+body{
+	background-image:url(../images/Motown3.png);
+}
+
+#masthead {
+	font-size: 3em;
+	font-family: 'Monoton', cursive;
+	background-color: #fff;
+	padding: 1em 1em 1em 1em;
+	border-style: solid;
+	border-width: .2em;
+	border-color: #111;
+	margin-top: 1em;
+}
