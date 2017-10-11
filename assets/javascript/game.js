@@ -3,20 +3,22 @@ $(document).ready(function(){
 	$(gameQuestion).hide();
 
 //Global Variables
-	var question1 = {
+	var questions = {
     question: "Who made the lyrics 'What you want, Baby, I got it' famous?",
     choices: ["Diana Ross", "Aretha Franklin", "Gladys Knight", "Tammi Terrell"],
     correctAnswer: 1
 	};
 	
-	var question2 = {
-    question: "Which of the following songs was sung by Marvin Gaye&#63",
+	// var question2 = 
+	{
+    question: "Which of the following songs was sung by Marvin Gaye?",
     choices: ["If I Were a Boy", "Tracks of My Tears", "Isn't She Lovely", "Heard It Through The Grapevine"],
     correctAnswer: 3
 	};
 
-	var question3 = {
-    question: "Who of the following is the founder of Motown&#63",
+	// var question3 = 
+	{
+    question: "Who of the following is the founder of Motown?",
     choices: ["Berry Gordy", "Tracks of My Tears", "Phil Spector", "Heard It Through The Grapevine"],
     correctAnswer: 0
 	};
@@ -31,17 +33,18 @@ console.log(question1.choices);
 
 //Reset
 
-//Function to start game when start button is pressed
-
+//Function to show first question and possible answers
+// when the start button is pressed
 $("button").click(function(){
 	$("button").hide();
 	$(gameQuestion).show();
 	$("#gameQuestion").text(question1.question);
-	for (var i = 0; i <questions.choices; 1++){
-		$("answers").map(question1.choices);
-	}
+	
+	for (var i = 0; i < question1.choices.length; i++){
+		answers=question1.choices[i];
+		$("answers").map(question1.choices[i]);
+		};
 	});
-
 
 //Function to .push questions to HTML element, way to hide questions 
 //and push questions in order
