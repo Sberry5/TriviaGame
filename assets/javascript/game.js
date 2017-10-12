@@ -50,9 +50,9 @@ $("button").on("click", function(){
 		run();
           // Create button for each div-
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-          var a = $("<input type="radio">");
+          var a = $("<input>");
           // Adding input type=radio to each button
-//          a.each("input type", "radio");
+          a.attr("type", "radio");
           // Adding a class of "answers" to each answer
           a.addClass("answers");
           // Adding a data-attribute
@@ -83,17 +83,18 @@ $("button").on("click", function(){
         stop();
         //  Alert the user that time is up.
         alert("Time Up!");
+    	}
         //Call score function
-            function stop() {
-
-      //  Clears our intervalId
-      //  We just pass the name of the interval
-      //  to the clearInterval function.
-      clearInterval(intervalId);
-    }
+    function stop() {
+	    clearInterval(intervalId);
+    	};
+	};
 
 
 //Function to indicate correct answer
+	// function () {
+
+	// }
  
 //Corresponding answers - use "input type="radio"
 //to allow user to select option create on.click event
@@ -119,7 +120,11 @@ $("button").on("click", function(){
 //# number of incorrect answers, # of unanswered questions
 
 
-      }
-    }
+//Reset
+	// function reset(){
+	// 	question: [];
+	// 	choices: "";
+
+	// }
 
 });
