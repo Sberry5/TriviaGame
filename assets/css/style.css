@@ -43,3 +43,22 @@ h1{
 	width: 4em;
 
 }
+
+.questions{
+	color: #111;
+	background-color: #fff;
+	padding: .5em .5em .5em .5em;
+	border-color: #111;
+	border-width: 1em;
+	height: 2em;
+	width: 4em;
+
+}
+
+#timer{
+	color: #111;
+	background-color: #fff;
+	padding: .25em;
+	border-color: .5em;
+	border-width: .5em;
+}
