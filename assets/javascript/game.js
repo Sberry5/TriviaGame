@@ -77,20 +77,16 @@ $("button").on("click", function(){
       //  Decrease number by one.
       	number--;
       //  Show the number in the #show-number tag.
-      $("#timer").html("<h2>" + number + "</h2>");
+      $("#timer").html("<h2>" + ("Seconds Remaining: " + number) + "</h2>");
       	//If countdwon reaches 0 
       	if (number === 0) {
     	//Call the stop function
         stop();
         //  Alert the user that time is up.
         alert("Time is Up! Let's see how you did...");
-        //Call score function
-            function stop() {
-
-      //  Clears our intervalId
-      //  We just pass the name of the interval
-      //  to the clearInterval function.
-      clearInterval(intervalId);
+    //Function to stop countdown
+    function stop() {
+    	$("#timer").hide();
     }
 
 
