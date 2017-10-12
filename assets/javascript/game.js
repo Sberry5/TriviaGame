@@ -43,15 +43,14 @@ console.log(firstAnswer);
 
 $("button").on("click", function(){
 		$("button").hide();
-		$("#gameQuestion").show();
 		$("#gameQuestion").html(firstQuestion);
-
+		$("#gameQuestion").show();
 		for (var i = 0; i < firstChoices.length; i++){
 		//Call timer function
 		run();
           // Create button for each div-
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-          var a = $("<button>");
+          var a = $("<input type="radio">");
           // Adding input type=radio to each button
 //          a.each("input type", "radio");
           // Adding a class of "answers" to each answer
