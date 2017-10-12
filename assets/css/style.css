@@ -33,7 +33,7 @@ h1{
 	border-width: .1em;
 }
 
-#gameQuestion1{
+#questionOne{
 	color: #111;
 	background-color: #fff;
 	padding: .5em .5em .5em .5em;
@@ -67,6 +67,6 @@ h1{
 	color: #111;
 	background-color: #fff;
 	padding: .25em;
-	border-color: .5em;
+	border-color: #111;
 	border-width: .5em;
 }
