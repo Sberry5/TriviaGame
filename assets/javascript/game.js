@@ -1,6 +1,6 @@
 //Document ready function to wrap all javascript
 $(document).ready(function(){
-	$("#gameQuestion1").hide();
+	$("#gameQuestion").hide();
 //Global Variables
 	var question1 = {
     question: "Who made the lyrics 'What you want, Baby, I got it' famous?",
@@ -28,14 +28,6 @@ console.log(question1.choices);
 	var firstChoices = (question1.choices);
 	var firstAnswer = (question1.correctAnswer);
 
-	var secondQuestion = (question2.question);
-	var secondChoices = (question2.choices);
-	var secondAnswer = (question2.correctAnswer);
-
-	var thirdQuestion = (question3.question);
-	var thirdChoices = (question3.choices);
-	var thirdAnswer = (question3.correctAnswer);
-
 console.log(firstQuestion);
 console.log(firstChoices);
 console.log(firstAnswer);
@@ -51,8 +43,8 @@ console.log(firstAnswer);
 
 $("button").on("click", function(){
 		$("button").hide();
-		$("#gameQuestion1").html(firstQuestion);
-		$("#gameQuestion1").show();
+		$("#gameQuestion").html(firstQuestion);
+		$("#gameQuestion").show();
 		for (var i = 0; i < firstChoices.length; i++){
 		//Call timer function
 		run();
@@ -72,32 +64,8 @@ $("button").on("click", function(){
         }
       });
 
-$("button").on("click", function(){
-		$("button").hide();
-		$("#gameQuestion2").html(secondQuestion);
-		$("#gameQuestion2").show();
-		for (var i = 0; i < secondChoices.length; i++){
-		//Call timer function
-		run();
-          // Create button for each div-
-          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-          var a = $("<input>");
-          // Adding input type=radio to each button
-          a.attr("type", "radio");
-          // Adding a class of "answers" to each answer
-          a.addClass("answers");
-          // Adding a data-attribute
-          a.attr("data-name", secondChoices[i]);
-          // Providing the initial button text
-          a.text(secondChoices[i]);
-          // Adding the button to the buttons-view div
-          $("#answers").append(a);
-        }
-      });
-
-
 //Function to set timer, called within the starting function above
- 	var number = 120;
+ 	var number = 100;
 	    function run() {
       intervalId = setInterval(decrement, 1000);
     }
@@ -108,7 +76,7 @@ $("button").on("click", function(){
       //  Decrease number by one.
       	number--;
       //  Show the number in the #show-number tag.
-      $("#show-number").html("<h2>" + "Time Remainig:" + number + "</h2>");
+      $("#show-number").html("<h2>" + "Time remaining: " number + "</h2>");
       	//If countdwon reaches 0 
       	if (number === 0) {
     	//Call the stop function
