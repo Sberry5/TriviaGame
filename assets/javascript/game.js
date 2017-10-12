@@ -20,9 +20,8 @@ $(document).ready(function(){
     correctAnswer: 0
 	};
 
-
-console.log(question1.question);
-console.log(question1.choices);
+// console.log(question1.question);
+// console.log(question1.choices);
 
 	var firstQuestion = (question1.question);
 	var firstChoices = (question1.choices);
@@ -49,14 +48,11 @@ $("button").on("click", function(){
 		//Call timer function
 		run();
           // Create button for each div-
-          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
           var a = $("<button>");
           // Adding input type=radio to each button
 //          a.each("input type", "radio");
           // Adding a class of "answers" to each answer
           a.addClass("answers");
-          // Adding a data-attribute
-          a.attr("data-name", firstChoices[i]);
           // Providing the initial button text
           a.text(firstChoices[i]);
           // Adding the button to the buttons-view div
@@ -77,7 +73,7 @@ $("button").on("click", function(){
       //  Decrease number by one.
       	number--;
       //  Show the number in the #show-number tag.
-      $("#timer").html("<h2>" + ("Seconds Remaining: " + number) + "</h2>");
+      $("#timer").html("<h2>" + ("Seconds Remaining: " +number) + "</h2>");
       	//If countdwon reaches 0 
       	if (number === 0) {
     	//Call the stop function
