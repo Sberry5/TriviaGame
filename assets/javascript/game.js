@@ -1,53 +1,49 @@
 //Document ready function to wrap all javascript
 $(document).ready(function(){
-	$("#gameQuestion").hide();
+	$("#gameQuestion1").hide();
 //Global Variables
-	var questions = [
-	// var question1 = {
-    {
+	var question1 = {
     question: "Who made the lyrics 'What you want, Baby, I got it' famous?",
-    choices: {
-    	1: "Diana Ross", 
-    	2: "Aretha Franklin",
-    	3: "Gladys Knight", 
-    	4: "Tammi Terrell",
-    	},
-    	correctAnswer: "2"
-	},
+    choices: ["Diana Ross", "Aretha Franklin", "Gladys Knight", "Tammi Terrell"],
+    correctAnswer: 1
+	};
 	
-	// var question2 = {
-	{
+	var question2 = {
     question: "Which of the following songs was sung by Marvin Gaye&#63",
-    choices: {
-    	1: "If I Were a Boy", 
-    	2: "Tracks of My Tears", 
-    	3: "Isn't She Lovely", 
-    	4: "Heard It Through The Grapevine"
-    	},
-    	correctAnswer: "4"
-	},
+    choices: ["If I Were a Boy", "Tracks of My Tears", "Isn't She Lovely", "Heard It Through The Grapevine"],
+    correctAnswer: 3
+	};
 
-	// var question3 = {
-	{
+	var question3 = {
     question: "Who of the following is the founder of Motown&#63",
-    choices: {
-    	1: "Berry Gordy", 
-    	2: "Tracks of My Tears", 
-    	3:"Phil Spector", 
-    	4: "Heard It Through The Grapevine"
-    	},
-    	correctAnswer: "1"
-	}
-];
+    choices: ["Berry Gordy", "Tracks of My Tears", "Phil Spector", "Heard It Through The Grapevine"],
+    correctAnswer: 0
+	};
 
-console.log(questions.question);
-console.log(questions.choices);
 
+console.log(question1.question);
+console.log(question1.choices);
+
+	var firstQuestion = (question1.question);
+	var firstChoices = (question1.choices);
+	var firstAnswer = (question1.correctAnswer);
+
+	var secondQuestion = (question2.question);
+	var secondChoices = (question2.choices);
+	var secondAnswer = (question2.correctAnswer);
+
+	var thirdQuestion = (question3.question);
+	var thirdChoices = (question3.choices);
+	var thirdAnswer = (question3.correctAnswer);
+
+console.log(firstQuestion);
+console.log(firstChoices);
+console.log(firstAnswer);
 
 	var wins = 0;
 	var losses = 0;
 	var endGame = false;
-	var answers = [];
+	var quizContent =[];
 
 //Reset
 
@@ -55,13 +51,50 @@ console.log(questions.choices);
 
 $("button").on("click", function(){
 		$("button").hide();
-		//Variable to hold the quiz content
-		var quiz = [];
-		for (var i = 0; i < questions.question; i++) {
-			questions
-		}
-        });
+		$("#gameQuestion1").html(firstQuestion);
+		$("#gameQuestion1").show();
+		for (var i = 0; i < firstChoices.length; i++){
+		//Call timer function
+		run();
+          // Create button for each div-
+          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+          var a = $("<input>");
+          // Adding input type=radio to each button
+          a.attr("type", "radio");
+          // Adding a class of "answers" to each answer
+          a.addClass("answers");
+          // Adding a data-attribute
+          a.attr("data-name", firstChoices[i]);
+          // Providing the initial button text
+          a.text(firstChoices[i]);
+          // Adding the button to the buttons-view div
+          $("#answers").append(a);
+        }
       });
+
+$("button").on("click", function(){
+		$("button").hide();
+		$("#gameQuestion2").html(secondQuestion);
+		$("#gameQuestion2").show();
+		for (var i = 0; i < secondChoices.length; i++){
+		//Call timer function
+		run();
+          // Create button for each div-
+          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+          var a = $("<input>");
+          // Adding input type=radio to each button
+          a.attr("type", "radio");
+          // Adding a class of "answers" to each answer
+          a.addClass("answers");
+          // Adding a data-attribute
+          a.attr("data-name", secondChoices[i]);
+          // Providing the initial button text
+          a.text(secondChoices[i]);
+          // Adding the button to the buttons-view div
+          $("#answers").append(a);
+        }
+      });
+
 
 //Function to set timer, called within the starting function above
  	var number = 120;
@@ -75,13 +108,13 @@ $("button").on("click", function(){
       //  Decrease number by one.
       	number--;
       //  Show the number in the #show-number tag.
-      $("#show-number").html("<h2>" + "Seconds left:" number + "</h2>");
+      $("#show-number").html("<h2>" + "Time Remainig:" + number + "</h2>");
       	//If countdwon reaches 0 
       	if (number === 0) {
     	//Call the stop function
         stop();
         //  Alert the user that time is up.
-        alert("Time Up! Let's see how you did...");
+        alert("Time is Up! Let's see how you did...");
     	}
         //Call score function
     function stop() {

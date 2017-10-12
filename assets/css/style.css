@@ -33,7 +33,7 @@ h1{
 	border-width: .1em;
 }
 
-#gameQuestion{
+#gameQuestion1{
 	color: #111;
 	background-color: #fff;
 	padding: .5em .5em .5em .5em;
@@ -43,6 +43,25 @@ h1{
 	width: 10em;
 }
 
+#gameQuestion2{
+	color: #111;
+	background-color: #fff;
+	padding: .5em .5em .5em .5em;
+	border-color: #111;
+	border-width: 1em;
+	height: 8em;
+	width: 10em;
+}
+
+#gameQuestion3{
+	color: #111;
+	background-color: #fff;
+	padding: .5em .5em .5em .5em;
+	border-color: #111;
+	border-width: 1em;
+	height: 8em;
+	width: 10em;
+}
 
 #timer{
 	color: #111;
