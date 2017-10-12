@@ -2,40 +2,52 @@
 $(document).ready(function(){
 	$("#gameQuestion").hide();
 //Global Variables
-	var question1 = {
+	var questions = [
+	// var question1 = {
+    {
     question: "Who made the lyrics 'What you want, Baby, I got it' famous?",
-    choices: ["Diana Ross", "Aretha Franklin", "Gladys Knight", "Tammi Terrell"],
-    correctAnswer: 1
-	};
+    choices: {
+    	1: "Diana Ross", 
+    	2: "Aretha Franklin",
+    	3: "Gladys Knight", 
+    	4: "Tammi Terrell",
+    	},
+    	correctAnswer: "2"
+	},
 	
-	var question2 = {
+	// var question2 = {
+	{
     question: "Which of the following songs was sung by Marvin Gaye&#63",
-    choices: ["If I Were a Boy", "Tracks of My Tears", "Isn't She Lovely", "Heard It Through The Grapevine"],
-    correctAnswer: 3
-	};
+    choices: {
+    	1: "If I Were a Boy", 
+    	2: "Tracks of My Tears", 
+    	3: "Isn't She Lovely", 
+    	4: "Heard It Through The Grapevine"
+    	},
+    	correctAnswer: "4"
+	},
 
-	var question3 = {
+	// var question3 = {
+	{
     question: "Who of the following is the founder of Motown&#63",
-    choices: ["Berry Gordy", "Tracks of My Tears", "Phil Spector", "Heard It Through The Grapevine"],
-    correctAnswer: 0
-	};
+    choices: {
+    	1: "Berry Gordy", 
+    	2: "Tracks of My Tears", 
+    	3:"Phil Spector", 
+    	4: "Heard It Through The Grapevine"
+    	},
+    	correctAnswer: "1"
+	}
+];
 
+console.log(questions.question);
+console.log(questions.choices);
 
-console.log(question1.question);
-console.log(question1.choices);
-
-	var firstQuestion = (question1.question);
-	var firstChoices = (question1.choices);
-	var firstAnswer = (question1.correctAnswer);
-
-console.log(firstQuestion);
-console.log(firstChoices);
-console.log(firstAnswer);
 
 	var wins = 0;
 	var losses = 0;
 	var endGame = false;
-	var quizContent =[];
+	var answers = [];
 
 //Reset
 
@@ -43,29 +55,16 @@ console.log(firstAnswer);
 
 $("button").on("click", function(){
 		$("button").hide();
-		$("#gameQuestion").html(firstQuestion);
-		$("#gameQuestion").show();
-		for (var i = 0; i < firstChoices.length; i++){
-		//Call timer function
-		run();
-          // Create button for each div-
-          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-          var a = $("<input>");
-          // Adding input type=radio to each button
-          a.attr("type", "radio");
-          // Adding a class of "answers" to each answer
-          a.addClass("answers");
-          // Adding a data-attribute
-          a.attr("data-name", firstChoices[i]);
-          // Providing the initial button text
-          a.text(firstChoices[i]);
-          // Adding the button to the buttons-view div
-          $("#answers").append(a);
-        }
+		//Variable to hold the quiz content
+		var quiz = [];
+		for (var i = 0; i < questions.question; i++) {
+			questions
+		}
+        });
       });
 
 //Function to set timer, called within the starting function above
- 	var number = 100;
+ 	var number = 120;
 	    function run() {
       intervalId = setInterval(decrement, 1000);
     }
@@ -76,13 +75,13 @@ $("button").on("click", function(){
       //  Decrease number by one.
       	number--;
       //  Show the number in the #show-number tag.
-      $("#show-number").html("<h2>" + number + "</h2>");
+      $("#show-number").html("<h2>" + "Seconds left:" number + "</h2>");
       	//If countdwon reaches 0 
       	if (number === 0) {
     	//Call the stop function
         stop();
         //  Alert the user that time is up.
-        alert("Time Up!");
+        alert("Time Up! Let's see how you did...");
     	}
         //Call score function
     function stop() {
