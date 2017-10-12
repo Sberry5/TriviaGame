@@ -1,6 +1,6 @@
 //Document ready function to wrap all javascript
 $(document).ready(function(){
-
+	$("#gameQuestion").hide();
 //Global Variables
 	var question1 = {
     question: "Who made the lyrics 'What you want, Baby, I got it' famous?",
@@ -43,7 +43,8 @@ console.log(firstAnswer);
 
 $("button").on("click", function(){
 		$("button").hide();
-		$("#answers").html(firstQuestion);
+		$("#gameQuestion").show();
+		$("#gameQuestion").html(firstQuestion);
 
 		for (var i = 0; i < firstChoices.length; i++){
 		//Call timer function
@@ -104,7 +105,7 @@ $("button").on("click", function(){
 //Loop to check userAnswer against correctAnswer
  
 //Conditionals
-//            if (userAnswer === correctAnswer) {
+//            if (userAnswer === firstAnswer) {
 //                            wins++;
 //                            reset();
 //            {

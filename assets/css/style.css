@@ -39,21 +39,10 @@ h1{
 	padding: .5em .5em .5em .5em;
 	border-color: #111;
 	border-width: 1em;
-	height: 2em;
-	width: 4em;
-
+	height: 8em;
+	width: 10em;
 }
 
-.questions{
-	color: #111;
-	background-color: #fff;
-	padding: .5em .5em .5em .5em;
-	border-color: #111;
-	border-width: 1em;
-	height: 2em;
-	width: 4em;
-
-}
 
 #timer{
 	color: #111;
